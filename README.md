@@ -12,5 +12,9 @@
 5. Seeding with `rails db:seed`
 6. Test your data with `rails c`
 
+### Routes
+1. Create the routes
+2. Test with `rails routes` or `http://localhost:3000/yann`
 
-
+### Work in silo ( Action + View)
+1. Create controller `rails g controller restaurants`

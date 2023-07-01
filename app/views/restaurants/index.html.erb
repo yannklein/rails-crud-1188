@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center my-5">Our restaurants</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-3">
+        <div class="card m-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= restaurant.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.category %></h6>
+          <p class="card-text"><%= '⭐️' * restaurant.rating %></p>
+          <%# <a href="#" class="card-link">More info...</a> %>
+          <%= link_to "More info...", restaurant_path(restaurant) %>
+          <%= link_to "Delete",
+            restaurant_path(restaurant),
+            class: "delete-btn",
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
